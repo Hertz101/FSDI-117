@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}
+About Me!
+{% endblock title %}
+
+{% load static %}
+
+{% block content %}
+<div class="container my-5">
+  <!-- row align-items-center keeps image and card vertically aligned -->
+  <div class="row align-items-center g-4">
+    
+    <!-- Left Column: Profile Image -->
+    <div class="col-12 col-md-5 text-center">
+      <img src="{% static 'img/sal.jpeg' %}" 
+        class="img-fluid rounded-circle shadow" 
+        style="max-width: 350px; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;" 
+        alt="Circular Profile Photo">
+    </div>
+
+  
+    <div class="col-12 col-md-7">
+  <div class="card border-0 shadow-sm p-4">
+    <div class="card-body">
+      
+      <div class="d-flex align-items-center gap-2 mb-3">
+        <h2 class="card-title fw-bold mb-0">Adam Hertzberg</h2>
+        <img src="{% static 'img/army.webp' %}" 
+            alt="U.S. Army Logo" 
+            style="height: 44px; width: auto; object-fit: contain;">
+      </div>
+
+      <p class="card-text text-secondary leading-relaxed">
+        Welcome to my Portfolio! I'm a passionate new web developer focused on building clean, interactive, and responsive web applications using Python, Django, and modern front-end tools. I am currently studying at San Diego Global Knowledge University.
+      </p>
+      
+      <p class="card-text text-secondary">
+        I served 6 years in the US Army as a helicopter mechanic. My hobbies include working on classic cars, motorcycles, hunting, and fishing.
+      </p>
+      
+      <div class="mt-4">
+        <a href="{% url 'projects' %}" class="btn btn-primary me-2">View my Projects</a>
+        <a href="{% url 'contact' %}" class="btn btn-outline-secondary">Contact Me</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    </div>
+
+  </div>
+</div>
+{% endblock content %}
