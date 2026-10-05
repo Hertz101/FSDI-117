@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-Projects!
+Projects
 {% endblock title %}
 
 {% load static %}
@@ -10,13 +10,11 @@ Projects!
 <div class="container my-4">
   <h1 class="mb-4">Projects</h1>
 
-  <!-- Responsive grid wrapper: 1 column on mobile, 2 on tablet, 3 on desktop -->
+
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     {% for project in projects %}
       <div class="col">
         <div class="card h-100 shadow-sm border-0">
-          
-          <!-- Project Image -->
           <a href="{{ project.repository }}" target="_blank" rel="noopener noreferrer">
             <img 
               src="{{ project.image.url }}" 
@@ -25,22 +23,15 @@ Projects!
               style="height: 180px; object-fit: cover;"
             >
           </a>
-
-          <!-- Card Body -->
           <div class="card-body d-flex flex-column">
-            <!-- Title & Year -->
             <h5 class="card-title fs-6 fw-bold">
               <a href="{{ project.repository }}" class="text-decoration-none text-dark" target="_blank" rel="noopener noreferrer">
                 {{ project.name }} <span class="text-muted fw-normal">({{ project.year }})</span>
               </a>
             </h5>
-
-            <!-- Description -->
             <p class="card-text text-secondary small flex-grow-1">
               {{ project.description }}
             </p>
-
-            <!-- Skill Tags -->
             <div class="mt-2">
               {% for skill in project.skills.all %}
                 <span class="badge bg-light text-dark border me-1 mb-1">{{ skill.name }}</span>
